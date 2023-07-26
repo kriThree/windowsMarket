@@ -1,0 +1,96 @@
+@import './styles.scss';
+.header{
+    color: $color2;
+    background-color:$color1;
+}
+
+.header__title{
+    font-size: 40px;
+}
+.header__logo{
+    z-index: 10;
+    height: 100px;
+    width: 100px;
+    @media (min-width:515px) {
+    grid-area: a;
+    }
+}
+.header__container{
+    padding: 20px 0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width:515px) {
+        gap: 5%;
+        display: grid;
+        grid-template-columns: 58% 16% 16%;
+        grid-template-areas: 'a b c';
+    }
+}
+.header__text{
+
+    @media (min-width:515px) {
+        text-align: right;
+    }
+}
+.header__company{
+    position: relative;
+   
+    &::before{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $color1;
+        color: $color1;
+        content: '.';
+        display: block;
+        animation-duration: 1500ms;
+        animation-name: companyLoad;
+        transform: translate(100%);
+    }
+    @media (min-width:515px) {
+        grid-area: c;
+        &::before{
+            display: none;
+        }
+    }
+}
+
+@keyframes companyLoad {
+    0%{
+        transform: translate(0);
+    } 
+    100%{
+        transform: translate(100%);
+
+    }
+}
+.header__contacts{
+    position: relative;
+   
+    &::before{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $color1;
+        color: $color1;
+        content: '.';
+        animation-duration: 1500ms;
+        animation-name: contactsLoad;
+        width: 0;
+    }
+    @media (min-width:515px) {
+        grid-area: b;
+        &::before{
+            display: none;
+        }
+    } 
+}
+@keyframes contactsLoad {
+    0%{
+        width: 100%
+    } 
+    100%{
+        width: 0;
+    }
+}
