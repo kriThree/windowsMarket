@@ -1,4 +1,3 @@
-import images from "./images";
 
 const slider = document.getElementById('indexSlogansSlider');
 const nextButton = document.getElementById('sliderButtonNext');
@@ -26,22 +25,18 @@ function backButtonChecking(){
     backButton.style.opacity = '1' ;
 }
 function nextButtonChecking(){
-    if(sliderCount === 10)return nextButton.style.opacity = '0.5';
+    if(sliderCount === 9)return nextButton.style.opacity = '0.5';
     nextButton.style.opacity = '1';
 }
 
-for (let index = 0; index < 11; index++) {
-    const element = `<div class = "slogans__slider-element"><img src = "${images[index]}"alt = "#"/>${index + 1}</div>`;
-    slider.innerHTML += element;
-    
-}
+
 backButton.addEventListener('click',()=>{
     if(sliderCount > 0) sliderCount--; ;
     updateSlider();
 });
 
 nextButton.addEventListener('click',()=>{
-    if(sliderCount < 10) sliderCount++;
+    if(sliderCount < 9) sliderCount++;
     updateSlider();
 });
 slider.addEventListener('click',()=>{

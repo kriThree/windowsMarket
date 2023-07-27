@@ -47,4 +47,8 @@ body{
 }
 .subtitle{
   font-size: 30px;
+  @media (min-width:515px) {
+    font-size: 52px;
+  
+  }
 }

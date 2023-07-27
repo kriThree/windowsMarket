@@ -2,6 +2,10 @@
 .header{
     color: $color2;
     background-color:$color1;
+    height: 20vh;
+    @media (min-width:515px) {
+        height: auto;
+    }
 }
 
 .header__title{
@@ -12,15 +16,15 @@
     height: 100px;
     width: 100px;
     @media (min-width:515px) {
-    grid-area: a;
+        grid-area: a;
     }
 }
 .header__container{
-    padding: 20px 0 ;
     display: flex;
     justify-content: space-between;
     align-items: center;
     @media (min-width:515px) {
+        padding: 10px 0 ;
         gap: 5%;
         display: grid;
         grid-template-columns: 58% 16% 16%;
@@ -31,6 +35,9 @@
 
     @media (min-width:515px) {
         text-align: right;
+    }
+    @media (min-width:900px) {
+        font-size: 25px;
     }
 }
 .header__company{

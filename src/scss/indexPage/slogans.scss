@@ -5,7 +5,16 @@
     color: black;
     background-color: $color4;
 }
+.slogans__container{
+    @media (min-width:715px) {
+        display: grid;
+        grid-template-areas: 'a a'
+                             'b b'
+                             'c d';
+    }
+}
 .slogans__title{
+    text-align: center;
     color: black;
     position: relative;
     font-size: 25px;
@@ -13,11 +22,61 @@
     margin: 0 0 20px 0;
     @media (min-width:515px) {
         width: 80%;
-        font-size: 32px;
+        font-size: 62px;
+        grid-area: a;
+        text-align: left;
+    }
+    @media (min-width:715px) {
+        grid-area: a;
     }
 }
+.slogans__list{
+        color: whitesmoke;
+        margin: 50px 0 50px 0;
+        font-size: 30px;
+        text-align: center;
+        list-style-type: none;
+        line-height: 30px;
+        
+        li{
+            &:not(:last-child){
+                margin: 20px 0 ;
+            }
+        }
+        @media (min-width:515px) {
+            text-align: left;
+            li{
+                &:not(:last-child){
+                    margin: 20px 0 
+                }
+            }
+        }
+        @media (min-width:715px) {
+            grid-area: b;
+
+        }
+        @media (min-width:1200px) {
+            line-height: 40px;
+        }
+}
+
 .slogans__text{
     margin: 0 0 20px 0;
+    @media (min-width:515px) {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        hyphens: auto;
+    }   
+    @media (min-width:715px) {
+        grid-area: d;
+        margin: 0 0 0 30px;
+        font-size: 20px;
+
+    }
+    @media (min-width:820px) {
+        font-size: 30px;
+    }
 }
 
 .slogans__slider{
@@ -29,6 +88,7 @@
     grid-template-rows: 450px 1fr;
     @media (min-width:515px) {
         justify-content: start;
+        grid-area: c;
         display: grid;
         grid-template-areas:  'b b'
                                 'a c';
@@ -76,7 +136,11 @@
     @media (min-width:515px) {
     border-radius: 10px;
         margin: 0 auto;
+        padding: 20px;
         background-color: $color3;
+    }
+    @media (min-width:800px) {
+    padding: 30px;
     }
 }
 

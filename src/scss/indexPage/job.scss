@@ -3,18 +3,31 @@
 .index__job-block{
     margin: 40px 0 0 0 ;
 }
+.job__title{
+    @media (min-width:715px) {
+        margin:  0 0 40px 0 ;
+    }
+}
 .job__list{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 15px ;
+    @media (min-width:715px) {
+        gap: 35px;
+        justify-content: start;
+    }
 }
+
 .job__list-element{
-    margin: 20px 0 0 0;
     padding: 10px;
     overflow: hidden;
     border-radius: 10px;
     background-color: wheat;
     width: 45%;    
+    @media (min-width:1000px) {
+        width: 30%;
+    }
 }
 .job__list-element__image{
     padding: 5px;
